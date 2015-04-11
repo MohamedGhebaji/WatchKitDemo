@@ -27,7 +27,12 @@
                         <switch width="1" alignment="left" value="YES" title="Offre advice" id="TOb-hR-Qmj"/>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Record Mood" id="rxW-Ta-iot">
                             <connections>
-                                <segue destination="fdV-7o-2re" kind="push" id="Vbg-2e-Epb"/>
+                                <segue destination="fdV-7o-2re" kind="push" identifier="RecordMoodSegue" id="Vbg-2e-Epb"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Help" id="8t3-dR-Kkw">
+                            <connections>
+                                <segue destination="N7T-h2-wWf" kind="modal" id="Pbh-BK-xoQ"/>
                             </connections>
                         </button>
                     </items>
@@ -41,7 +46,7 @@
         <!--DetailInterfaceController-->
         <scene sceneID="0ER-HE-whL">
             <objects>
-                <controller identifier="DetailInterfaceController" id="fdV-7o-2re">
+                <controller identifier="DetailInterfaceController" id="fdV-7o-2re" customClass="DetailInterfaceController">
                     <items>
                         <group width="1" alignment="left" id="EnH-4n-mc2">
                             <items>
@@ -67,7 +72,21 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="403" y="278"/>
+            <point key="canvasLocation" x="443" y="282"/>
+        </scene>
+        <!--Help Interface Controller-->
+        <scene sceneID="Kfw-bv-09E">
+            <objects>
+                <controller id="N7T-h2-wWf" customClass="HelpInterfaceController">
+                    <items>
+                        <label alignment="center" text="Help" id="YWj-TT-sfL"/>
+                        <label width="1" alignment="left" textAlignment="justified" numberOfLines="0" id="S0y-VP-Epf">
+                            <string key="text">Keep track of your mood from the comfort of the most personal device there is! Just select your mood and let the app do the rest!</string>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="443" y="556"/>
         </scene>
     </scenes>
 </document>

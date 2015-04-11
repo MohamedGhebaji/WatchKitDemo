@@ -7,7 +7,7 @@
 //
 
 #import "DetailInterfaceController.h"
-
+#import "InterfaceController.h"
 
 @interface DetailInterfaceController()
 
@@ -15,6 +15,9 @@
 @property (nonatomic, weak) IBOutlet WKInterfaceLabel *moodTitleLabel;
 @property (nonatomic, weak) IBOutlet WKInterfaceLabel *moodDescriptionLabel;
 @property (nonatomic, weak) IBOutlet WKInterfaceLabel *moodAdviceLabel;
+
+@property (nonatomic, copy) NSArray *moodNames;
+@property (nonatomic, assign) int currentMood;
 
 @end
 
@@ -24,13 +27,23 @@
 #pragma mark - Life Cycle
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    self.moodNames = [NSArray arrayWithObjects:@"OK", @"Not Bad", @"Hmmm", @"Anger", @"RAWR", nil];
+    self.currentMood = 0;
     
-    // Configure interface objects here.
+    if (context && [context isKindOfClass:[MoodeContextData class]]) {
+        self.currentMood = ((MoodeContextData *)context).moodIndex;
+    }
 }
 
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+    [self.moodImage setImageNamed:[NSString stringWithFormat:@"rage%d",self.currentMood]];
+    NSString *moodName = self.moodNames[self.currentMood];
+    [self.moodTitleLabel setText:moodName];
+    [self.moodDescriptionLabel setText:[NSString stringWithFormat:@"You are feeling SO %@", moodName]];
+    
 }
 
 - (void)didDeactivate {

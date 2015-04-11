@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D94F419A1AD9605A00194AE0 /* HelpInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94F41991AD9605A00194AE0 /* HelpInterfaceController.m */; };
 		D97593011AD937C200B79626 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D97593001AD937C200B79626 /* main.m */; };
 		D97593041AD937C200B79626 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D97593031AD937C200B79626 /* AppDelegate.m */; };
 		D97593071AD937C200B79626 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D97593061AD937C200B79626 /* ViewController.m */; };
@@ -62,6 +63,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D94F41981AD9605A00194AE0 /* HelpInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpInterfaceController.h; sourceTree = "<group>"; };
+		D94F41991AD9605A00194AE0 /* HelpInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpInterfaceController.m; sourceTree = "<group>"; };
 		D97592FB1AD937C200B79626 /* AppleWatchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleWatchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97592FF1AD937C200B79626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D97593001AD937C200B79626 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 		D97593291AD937FF00B79626 /* AppleWatchDemo WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D94F41981AD9605A00194AE0 /* HelpInterfaceController.h */,
+				D94F41991AD9605A00194AE0 /* HelpInterfaceController.m */,
 				D97593491AD94E2200B79626 /* DetailInterfaceController.h */,
 				D975934A1AD94E2200B79626 /* DetailInterfaceController.m */,
 				D975932C1AD937FF00B79626 /* InterfaceController.h */,
@@ -396,6 +401,7 @@
 			files = (
 				D975934B1AD94E2200B79626 /* DetailInterfaceController.m in Sources */,
 				D975932E1AD937FF00B79626 /* InterfaceController.m in Sources */,
+				D94F419A1AD9605A00194AE0 /* HelpInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +656,7 @@
 				D97593201AD937C200B79626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D97593211AD937C200B79626 /* Build configuration list for PBXNativeTarget "AppleWatchDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -658,6 +665,7 @@
 				D97593231AD937C200B79626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D97593421AD937FF00B79626 /* Build configuration list for PBXNativeTarget "AppleWatchDemo WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -666,6 +674,7 @@
 				D97593441AD937FF00B79626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D97593451AD937FF00B79626 /* Build configuration list for PBXNativeTarget "AppleWatchDemo WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -674,6 +683,7 @@
 				D97593471AD937FF00B79626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

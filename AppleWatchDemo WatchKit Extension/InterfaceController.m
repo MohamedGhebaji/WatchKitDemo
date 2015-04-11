@@ -8,9 +8,24 @@
 
 #import "InterfaceController.h"
 
+@interface MoodeContextData()
+@end
+
+@implementation MoodeContextData
+- (instancetype)initWithMoodeIndex:(int)moodIndex
+{
+    self = [super init];
+    if (self) {
+        self.moodIndex = moodIndex;
+    }
+    return self;
+}
+@end
+
 
 @interface InterfaceController()
 @property (nonatomic, weak) IBOutlet WKInterfaceImage *moodImage;
+@property (nonatomic, assign) int currentMoodIdentifier;
 
 - (void)_updateMoodImageWithMode:(int)currentMode;
 
@@ -36,6 +51,15 @@
     [super didDeactivate];
 }
 
+#pragma mark - Navigation
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier {
+    if ([segueIdentifier isEqualToString:@"RecordMoodSegue"]) {
+        return [[MoodeContextData alloc] initWithMoodeIndex:self.currentMoodIdentifier];
+    }
+    
+    return nil;
+}
+
 #pragma mark - Private Methods
 
 - (void)_updateMoodImageWithMode:(int)currentMode {
@@ -49,6 +73,7 @@
 #pragma mark - Actions
 
 - (IBAction)MoodSliderChange:(float)value {
+    self.currentMoodIdentifier = (int)value;
     NSLog(@"current mood %d", (int)value);
     [self _updateMoodImageWithMode:(int)value];
 }

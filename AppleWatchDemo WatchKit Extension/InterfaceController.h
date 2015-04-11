@@ -9,6 +9,11 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
+@interface MoodeContextData : NSObject
+@property (nonatomic, assign) int moodIndex;
+- (instancetype)initWithMoodeIndex:(int)moodIndex;
+@end
+
 @interface InterfaceController : WKInterfaceController
 
 @end
