@@ -24,7 +24,11 @@
                                 <label alignment="right" text="Rage" id="gOY-bn-V6G"/>
                             </items>
                         </group>
-                        <switch width="1" alignment="left" value="YES" title="Offre advice" id="TOb-hR-Qmj"/>
+                        <switch width="1" alignment="left" value="YES" title="Offre advice" id="TOb-hR-Qmj">
+                            <connections>
+                                <action selector="AdviceSelectorChange:" destination="AgC-eL-Hgc" id="BDm-p8-pR6"/>
+                            </connections>
+                        </switch>
                         <button width="1" alignment="left" verticalAlignment="bottom" title="Record Mood" id="rxW-Ta-iot">
                             <connections>
                                 <segue destination="fdV-7o-2re" kind="push" identifier="RecordMoodSegue" id="Vbg-2e-Epb"/>

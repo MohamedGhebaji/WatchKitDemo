@@ -10,8 +10,12 @@
 #import <Foundation/Foundation.h>
 
 @interface MoodeContextData : NSObject
+
 @property (nonatomic, assign) int moodIndex;
-- (instancetype)initWithMoodeIndex:(int)moodIndex;
+@property (nonatomic, assign) BOOL shouldHideAdviceSection;
+
+- (instancetype)initWithMoodeIndex:(int)moodIndex adviceSectionState:(BOOL)adviceSectionState;
+
 @end
 
 @interface InterfaceController : WKInterfaceController

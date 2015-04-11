@@ -12,11 +12,12 @@
 @end
 
 @implementation MoodeContextData
-- (instancetype)initWithMoodeIndex:(int)moodIndex
+- (instancetype)initWithMoodeIndex:(int)moodIndex adviceSectionState:(BOOL)adviceSectionState
 {
     self = [super init];
     if (self) {
         self.moodIndex = moodIndex;
+        self.shouldHideAdviceSection = adviceSectionState;
     }
     return self;
 }
@@ -26,6 +27,7 @@
 @interface InterfaceController()
 @property (nonatomic, weak) IBOutlet WKInterfaceImage *moodImage;
 @property (nonatomic, assign) int currentMoodIdentifier;
+@property (nonatomic, assign) BOOL shouldHideAdviceSection;
 
 - (void)_updateMoodImageWithMode:(int)currentMode;
 
@@ -38,7 +40,8 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
 
-    // Configure interface objects here.
+    self.currentMoodIdentifier = 0;
+    self.shouldHideAdviceSection = NO;
 }
 
 - (void)willActivate {
@@ -54,7 +57,7 @@
 #pragma mark - Navigation
 - (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier {
     if ([segueIdentifier isEqualToString:@"RecordMoodSegue"]) {
-        return [[MoodeContextData alloc] initWithMoodeIndex:self.currentMoodIdentifier];
+        return [[MoodeContextData alloc] initWithMoodeIndex:self.currentMoodIdentifier adviceSectionState:self.shouldHideAdviceSection];
     }
     
     return nil;
@@ -76,6 +79,10 @@
     self.currentMoodIdentifier = (int)value;
     NSLog(@"current mood %d", (int)value);
     [self _updateMoodImageWithMode:(int)value];
+}
+
+- (IBAction)AdviceSelectorChange:(BOOL)value {
+    self.shouldHideAdviceSection = !value;
 }
 
 @end

@@ -18,6 +18,7 @@
 
 @property (nonatomic, copy) NSArray *moodNames;
 @property (nonatomic, assign) int currentMood;
+@property (nonatomic, assign) BOOL shouldHideAdviceSection;
 
 @end
 
@@ -32,6 +33,7 @@
     
     if (context && [context isKindOfClass:[MoodeContextData class]]) {
         self.currentMood = ((MoodeContextData *)context).moodIndex;
+        self.shouldHideAdviceSection = ((MoodeContextData *)context).shouldHideAdviceSection;
     }
 }
 
@@ -43,6 +45,7 @@
     NSString *moodName = self.moodNames[self.currentMood];
     [self.moodTitleLabel setText:moodName];
     [self.moodDescriptionLabel setText:[NSString stringWithFormat:@"You are feeling SO %@", moodName]];
+    [self.moodAdviceLabel setHidden:self.shouldHideAdviceSection];
     
 }
 
