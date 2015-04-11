@@ -42,7 +42,7 @@
         return;
     }
     
-    [self.moodImage setImage:[UIImage imageNamed:[NSString stringWithFormat:@"rage %d", currentMode]]];
+    [self.moodImage setImageNamed:[NSString stringWithFormat:@"rage%d", currentMode]];
 }
 
 #pragma mark - Actions
