@@ -25,7 +25,11 @@
                             </items>
                         </group>
                         <switch width="1" alignment="left" value="YES" title="Offre advice" id="TOb-hR-Qmj"/>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Record Mood" id="rxW-Ta-iot"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Record Mood" id="rxW-Ta-iot">
+                            <connections>
+                                <segue destination="fdV-7o-2re" kind="push" id="Vbg-2e-Epb"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="moodImage" destination="x58-YI-GYy" id="D9T-eX-iXb"/>
@@ -34,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="104" y="306.25"/>
         </scene>
-        <!--Detail Interface Controller-->
+        <!--DetailInterfaceController-->
         <scene sceneID="0ER-HE-whL">
             <objects>
-                <controller id="fdV-7o-2re" customClass="DetailInterfaceController">
+                <controller identifier="DetailInterfaceController" id="fdV-7o-2re">
                     <items>
                         <group width="1" alignment="left" id="EnH-4n-mc2">
                             <items>

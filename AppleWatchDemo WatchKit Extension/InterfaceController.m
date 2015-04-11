@@ -37,6 +37,7 @@
 }
 
 #pragma mark - Private Methods
+
 - (void)_updateMoodImageWithMode:(int)currentMode {
     if (currentMode < 0 || currentMode > 4) {
         return;
